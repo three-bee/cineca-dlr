@@ -53,7 +53,7 @@ make -j$(nproc)
 make install
 echo $?
 ```
-If successful, `echo` should give `0`. Then, append `export PATH=$HOME/glibc-2.29/bin:$PATH` to `~/.bashrc`. Run `source ~/.bashrc` or open a new terminal. Check `ldd --version`.
+If successful, `echo` should give `0`. Then, append `export PATH=$HOME/glibc-2.29/lib:$HOME/glibc-2.29/lib64:/usr/lib64:/lib64` to `~/.bashrc`. Run `source ~/.bashrc` or open a new terminal. Check `ldd --version`.
 
 
 ## Dynamic link library path (`LD_LIBRARY_PATH`) issues
