@@ -13,8 +13,6 @@ source $YOUR_ENV_PATH/bin/activate
 Install Torch and Kaolin:
 ```
 pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu121
-
-
 pip install kaolin==0.13.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-2.4.0_cu121.html
 ```
 
