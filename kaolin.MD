@@ -71,7 +71,7 @@ So we get around by this: `deactivate` your env, open your `$YOUR_ENV_PATH/bin/a
 
 ```bash
 python() {
-$HOME/glibc-2.29/lib/ld-linux-x86-64.so.2 --library-path $HOME/glibc-2.29/lib:$HOME/glibc-2.29/lib64:/usr/lib64:/lib64 $YOUR_ENV_PATH/bin/python "$@"
+$HOME/glibc-2.29/lib/ld-linux-x86-64.so.2 --library-path $HOME/glibc-2.29/lib:$HOME/glibc-2.29/lib64:/usr/lib64:/lib64:$LD_LIBRARY_PATH $YOUR_ENV_PATH/bin/python "$@"
 }
 ```
 
