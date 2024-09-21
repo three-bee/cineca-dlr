@@ -53,12 +53,12 @@ make -j$(nproc)
 make install
 echo $?
 ```
-If successful, `echo` should give `0`. Then, append `export PATH=$HOME/glibc-2.29/lib:$HOME/glibc-2.29/lib64:/usr/lib64:/lib64` to `~/.bashrc`. Run `source ~/.bashrc` or open a new terminal. Check `ldd --version`.
+If successful, `echo` should give `0`. Then, append `export PATH=$HOME/glibc-2.29/bin:$PATH` to `~/.bashrc`. Run `source ~/.bashrc` or open a new terminal. Check `ldd --version`.
 
 
 ## Dynamic link library path (`LD_LIBRARY_PATH`) issues
 
-If you also try to append `export LD_LIBRARY_PATH=$HOME/glibc-2.29/lib:$LD_LIBRARY_PATH` to `~/.bashrc` (which should be the logical next step to use _C python packages), you will unfortunately get this:
+If you also try to append `export LD_LIBRARY_PATH=$HOME/glibc-2.29/lib:$HOME/glibc-2.29/lib64:/usr/lib64:/lib64:$LD_LIBRARY_PATH` to `~/.bashrc` (which should be the logical next step to use _C python packages), you will unfortunately get this:
 
 ```
 >> ldd --version
