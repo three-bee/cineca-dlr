@@ -76,3 +76,5 @@ $HOME/glibc-2.29/lib/ld-linux-x86-64.so.2 --library-path $HOME/glibc-2.29/lib:$H
 ```
 
 Then, `source $YOUR_ENV_PATH/bin/activate` and `python -c "import kaolin"`. Hopefully you will get no errors!
+
+I believe that modifying `LD_LIBRARY_PATH` in `.bashrc` should have been enough for normal systems, but CINECA clusters are quite unique :)
