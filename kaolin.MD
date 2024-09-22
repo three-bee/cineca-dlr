@@ -70,11 +70,14 @@ But linking is required to run Kaolin. Somehow the global 2.28 and local 2.29 is
 So we get around by this: `deactivate` your env, open your `$YOUR_ENV_PATH/bin/activate`, and append:
 
 ```bash
+export PATH=$HOME/bison/bin:$PATH
+export PATH=$HOME/glibc-2.29/bin:$PATH
+
 python() {
 $HOME/glibc-2.29/lib/ld-linux-x86-64.so.2 --library-path $HOME/glibc-2.29/lib:$HOME/glibc-2.29/lib64:/usr/lib64:/lib64:$LD_LIBRARY_PATH $YOUR_ENV_PATH/bin/python "$@"
 }
 ```
 
-Then, `source $YOUR_ENV_PATH/bin/activate` and `python -c "import kaolin"`. Hopefully you will get no errors!
+Then, `source $YOUR_ENV_PATH/bin/activate` and `python -c "import kaolin"`. Hopefully you will get no errors! Remove the modifications done on `PATH` in `.bashrc` too, since `activate` will handle it.
 
 I believe that modifying `LD_LIBRARY_PATH` in `.bashrc` should have been enough for normal systems, but CINECA clusters are quite unique :)
