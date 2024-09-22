@@ -43,7 +43,7 @@ If you have built `glibc` locally to upgrade (for instance for Kaolin installati
         add the following `/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/gcc-12.2.0-gmhym3kmbzqlpwkzhgab2xsoygsdwxcl/lib64`to `--library-path`:
         ```bash
         python() {
-        $HOME/glibc-2.29/lib/ld-linux-x86-64.so.2 --library-path $HOME/glibc-2.29/lib:$HOME/glibc-2.29/lib64:/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/gcc-12.2.0-gmhym3kmbzqlpwkzhgab2xsoygsdwxcl/lib64:/lib64:$LD_LIBRARY_PATH /leonardo_work/EUHPC_A02_031/3d-gan-diff/3dgandiff_env/bin/python "$@"
+        $HOME/glibc-2.29/lib/ld-linux-x86-64.so.2 --library-path $HOME/glibc-2.29/lib:$HOME/glibc-2.29/lib64:/leonardo/prod/spack/5.2/install/0.21/linux-rhel8-icelake/gcc-8.5.0/gcc-12.2.0-gmhym3kmbzqlpwkzhgab2xsoygsdwxcl/lib64:/lib64:$LD_LIBRARY_PATH $YOUR_ENV_PATH/bin/python "$@"
         }
         ```
         so that the latest `libstdc++.so` can be used in dynamic linking process while importing python packages.
